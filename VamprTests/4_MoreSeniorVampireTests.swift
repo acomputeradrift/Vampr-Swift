@@ -42,6 +42,7 @@ class MoreSeniorVampireTests: XCTestCase {
   }
   
   func test_isMoreSenior_ShouldBeTrue_WhenCalledOnRootVampire() {
+    
     XCTAssertTrue(rootVampire.isMoreSenior(than: offspring1))
     XCTAssertTrue(rootVampire.isMoreSenior(than: offspring2))
     XCTAssertTrue(rootVampire.isMoreSenior(than: offspring3))
