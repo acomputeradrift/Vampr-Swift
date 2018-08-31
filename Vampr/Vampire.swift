@@ -105,12 +105,29 @@ class Vampire {
   
   /// Returns the total number of vampires that exist
   var totalDescendent: Int {
-    return -1
+    var  total = self.offspring.count
+      if self.offspring.isEmpty{
+      }else{
+        for child in offspring{
+          total += child.totalDescendent
+          if child.offspring.isEmpty{
+        }
+      }
+    }
+    return total
   }
   
   /// Returns an array of all the vampires that were converted after 1980
   var allMillennialVampires: [Vampire] {
-    return []
+    
+    var millennials = [Vampire]()
+    if (self.yearConverted > 1980) {
+      millennials.append(self)
+    }
+    for child in self.offspring {
+      millennials += child.allMillennialVampires
+    }
+    return millennials
   }
   
   // MARK: Stretch 
