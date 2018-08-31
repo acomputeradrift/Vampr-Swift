@@ -75,9 +75,9 @@ class Vampire {
       }
       return numberOfVampiresAway
     }
-    let selfVamp:Int = (numberOfVampiresFromOriginal2(vampire: self))
-    let vampVamp:Int = (numberOfVampiresFromOriginal2(vampire: vampire))
-    if selfVamp > vampVamp{
+    let selfVamp:Int = self.numberOfVampiresFromOriginal
+    let vampVamp:Int = vampire.numberOfVampiresFromOriginal
+    if selfVamp < vampVamp{
       return true
     }else{
       return false
