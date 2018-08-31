@@ -89,6 +89,17 @@ class Vampire {
   
   /// Returns the vampire object with that name, or null if no vampire exists with that name
   func vampire(withName name: String) -> Vampire? {
+    
+    if self.name == name{
+      return self
+    }else{
+      for child in offspring {
+        let thisVampr = child.vampire(withName: name)
+        if thisVampr != nil{
+          return thisVampr
+        }
+      }
+    }
     return nil
   }
   
